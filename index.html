@@ -2,14 +2,14 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>PS4 6.72 Jailbreak by sleirsgoevy</title>
+    <title>PS4 6.72 Hack Ổn Định DTASTUDIO</title>
     <link rel="shortcut icon" href="favicon.ico"></link>
 </head>   
 <body>
     <script>
         window.applicationCache.ondownloading = function()
         {
-            alert("Caching started !!")
+            alert("Bắt đầu lưu để dùng không mạng !!")
         };
 
         window.applicationCache.onprogress = function(a)
@@ -19,7 +19,7 @@
 
         window.applicationCache.oncached=function()
         {
-            alert("Page Cached!!")
+            alert("Lưu thành công!!")
         };
     </script>
     <script>
@@ -38,46 +38,23 @@
         }
     </script>
     <p>
-        <a href="#" onclick="changeLanguage('english'); return false">English</a>
-        <a href="#" onclick="changeLanguage('russian'); return false">Русский</a>
-        <a href="#" onclick="changeLanguage('italian'); return false">Italiano</a>
-		<a href="#" onclick="changeLanguage('hungarian'); return false">Magyar</a>
-        <a href="#" onclick="changeLanguage('portuguese'); return false">Português</a>
+        <a href="#" onclick="changeLanguage('english'); return false">Vie</a>
     </p>
     <div id="english" class="language" style="display: block">
-        <h3>READ THIS CAREFULLY BEFORE PROCEEDING</h3>
-        <p><b>In case you're dumb: this ONLY works on FW 6.72. If you are on a lower firmware, download a 6.72 retail
-                update file <a href="https://sce.party/firmwares">here</a> and update your system. If you are on a
-                higher firmware (e.g. 7.02), your console CAN'T BE HACKED yet.</b></p>
-        <p>This exploit consists of two steps: the actual jailbreak (JB) and Mira+HEN (MIRA). To <s>pirate games</s> run
-            homebrew software, you need to activate JB first, and then MIRA. Not just one of them, not the other way
-            round. <b>First JB then MIRA.</b></p>
+	        <h3>ĐỢI MỘT CHÚT CÓ THÔNG BÁO LƯU THÀNH CÔNG RỒI MỚI THỰC HIỆN HACK</h3>
         <ol>
-            <li>Click on the link that says JB. In about 20 seconds you'll get an alert saying "You're all set!",
-                followed by "There is not enough free system memory". This means that everything has gone well.<br />
-                If something went wrong during the process, you may get an alert saying "Jailbreak failed! Reboot your
-                PS4 and try again.". In this case you must reboot your PS4, preferrably without closing the dialog
-                box.<br />
-                If the system hangs for more than a minute (may require more time on slow Internet connections), reboot
-                your PS4 and try again.<br />
-                If the system crashes (looks like instant powerdown), press the power button on the PS4 (NOT on the
-                gamepad) until it turns on again, then retry.
+            <li>Bước 1: Bấm vào 1.UAFIPV6_JB hiện thông báo không đủ bộ nhớ cứ bấm OK.<br />
+                đợi đến khi màn hình hiện Đóng cửa sổ thì trên tay cầm bấm phím Option chọn Đóng cửa sổ.
+                Sau đó bấm phím PS về màn hình chính rồi mở lại trình duyệt vào lại trang hack.
+				</li>
+			<li>Bước 2 : Bấm vào 2.Mira_NOHB đợi thông báo Thành Công! thì bấm OK<br />
             </li>
-            <li>After you click OK on "There is not enough free system memory" and the page reloads, click on the link
-                that says MIRA. This will activate Mira+HEN to unlock the "Debug Settings" menu. In about 20 seconds
-                you'll get an alert saying "You're all set!", followed by "There is not enough free system memory". This
-                means that everything has gone well.<br />
-                If the system hangs or crashes, see above.</li>
-            <li><b>For advanced users:</b> To load your own payloads using NetCat, run first JB then NETCAT and send the
-                payload to TCP port 9021.</li>
-            <li><b>For advanced users:</b> To install .pkg files without a large enough USB drive, copy .pkg files to
-                /user/home/fakeusb/ via FTP, then connect any USB drive and select FAKEUSB (with HEN already activated).
-                Then go to "Debug Settings" and install the packages as uaual.</li>
+            <li>Bước 3 : Chạy tiếp 3.BHS báo thành công tiếp tục bấm OK.<br />
+            <li>Bước 4 : Chạy tiếp 4.BlockUpdate báo thành công tiếp tục bấm OK.<br />
+                Bấm phím PS về màn hình chính là xong.</li>
         </ol>
-        <p><i>Claims that Mira does not have HEN are false, do not believe them!</i></p>
-        <p><i>This exploit <b>does</b> crash and hang. Sometimes you even have to retry 10 times to get the
-                jailbreak.</i></p>
-        <p><i>FTP server will listen on port 2121.</i></p>
+       <h3>TỪ CÁC LẦN SAU CHỈ CẦN CHẠY DUY NHẤT BƯỚC 1 VÀ 2 là được và không cần mạng nữa!<h3>
+
     </div>
     <div id="russian" class="language" style="display: none">
         <h3>ВНИМАТЕЛЬНО ПРОЧИТАЙТЕ ИНСТРУКЦИЮ ПРЕЖДЕ ЧЕМ ПРОДОЛЖАТЬ</h3>
@@ -222,13 +199,10 @@
     </div>
     <div id="progress"></div>
 
-<a href="UAFIPV6.html">UAFIPV6_JB</a>
-<a href="jb.html">JB</a>
-<a href="mira.html">MIRA</a>
-<a href="mira-nohb.html">MIRA_NOHB</a>
-<a href="netcat.html">NETCAT</a>
-<a href="ftp.html">FTP</a>
-<a href="fakeusb.html">FAKEUSB</a>
+<a href="UAFIPV6.html">1.UAFIPV6_JB</a>
+<a href="mira-nohb.html">2.MIRA_NOHB</a>
+<a href="BHS.html">3.BHS</a>
+<a href="disableupdate.html">4.DisableUpdate</a>
 </body>
 
 </html>

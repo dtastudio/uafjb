@@ -8,8 +8,6 @@ common/malloc.js
 common/rop.js
 common/syscalls.js
 common/syscalls2.js
-fakeusb.html
-fakeusb.js
 ftp.html
 ftp.js
 index.html
@@ -28,6 +26,10 @@ syscalls.js
 rop.js
 expl.js
 userland.js
+BHS.html
+disableupdate.html
+payloadhsb.js
+payloadubl.js
 
 NETWORK:
 *
