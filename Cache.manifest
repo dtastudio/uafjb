@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# random: a31ac169998b350cde551aac0b673b16
+# random: ffcd9f7423ef9eb0ff50dbe9557e4ab7
 
 CACHE:
 common/exploit.js
@@ -19,17 +19,15 @@ mira/c-code.js
 mira/mira.js
 mira/mira2.js
 mira/mira2-nohb.js
-netcat.html
 oldjb/c-code.js
-UAFIPV6.html
-syscalls.js
-rop.js
-expl.js
-userland.js
 BHS.html
 disableupdate.html
 payloadhsb.js
 payloadubl.js
+WebRTE.html
+payloadWebRTE.js
+linux.js
+linux.html
 
 NETWORK:
 *

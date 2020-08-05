@@ -1,26 +1,28 @@
-# PS4 6.70 - 6.72 Kernel Exploit
----
-## Summary
-In this project you will find a full implementation of the "ipv6 uaf" kernel exploit for the PlayStation 4 on 6.70 - 6.72. It will allow you to run arbitrary code as kernel, to allow jailbreaking and kernel-level modifications to the system. will launch the usual payload launcher (on port 9020).
+# ps4jb
 
-This bug was originally discovered by [Fire30](https://twitter.com/fire30), and subsequently found by [Andy Nguyen](https://twitter.com/theflow0/)
+This is a full chain exploit for PS4 firmware 6.72. Basically this is TheFlow's POC together with PS4-specific kROP & kernel patches. [Mira](https://github.com/OpenOrbis/mira-project) is used as a HEN payload.
 
-## Patches Included
-The following patches are applied to the kernel:
-1) Allow RWX (read-write-execute) memory mapping (mmap / mprotect)
-2) Syscall instruction allowed anywhere
-3) Dynamic Resolving (`sys_dynlib_dlsym`) allowed from any process
-4) Custom system call #11 (`kexec()`) to execute arbitrary code in kernel mode
-5) Allow unprivileged users to call `setuid(0)` successfully. Works as a status check, doubles as a privilege escalation.
+## Building from source
 
-## Notes
-- The page will crash on successful kernel exploitation, this is normal
-- There are a few races involved with this exploit, losing one of them and attempting the exploit again might not immediately crash the system but stability will take a hit.
+To build from source, clone this repository recursively, and run these commands:
 
-## Contributors
+```
+cd src
+make
+```
 
-- [Specter](https://twitter.com/SpecterDev) - advice + [5.05 webkit](https://github.com/Cryptogenic/PS4-5.05-Kernel-Exploit/blob/master/expl.js) and [(6.20) rop execution method](https://github.com/Cryptogenic/PS4-6.20-WebKit-Code-Execution-Exploit)
-- [kiwidog](https://twitter.com/kd_tech_) - advice
-- [Fire30](https://twitter.com/fire30) - [bad_hoist](https://github.com/Fire30/bad_hoist)
-- [Andy Nguyen](https://twitter.com/theflow0/) - [disclosed exploit code](https://hackerone.com/reports/826026)
-- [SocraticBliss](https://twitter.com/SocraticBliss) - Shakespeare dev & crash test dummy
+You will get a fresh copy of the binary build in `src/build/`.
+
+Dependencies: `python3`, `gcc`, `ROPgadget`. Note: Mira is not being built from source
+
+## Adding your own payloads
+
+`miraldr.c` loads 65536 bytes at address stored in JS variable `mira_blob` into RWX memory and jumps to it. At this point only the minimal patches (amd64_syscall, mmap, mprotect, kexec) are applied (i.e. the process is still "sandboxed"). Normally `mira_blob` contains MiraLoader.
+
+`mira_blob_2_len` bytes at `mira_blob_2` are sent to `127.0.0.1:9021` in a background thread. If `mira_blob` contains MiraLoader this will be run in the same way but with the full patchset applied & already jailbroken.
+
+## Credits
+
+* [Fire30](https://github.com/Fire30/bad_hoist) for the WebKit exploit
+* [TheFlow](https://hackerone.com/reports/826026) for the kernel exploit
+* [Rui Ueyama](https://github.com/rui314/8cc) and [shinh](https://github.com/shinh/ELVM) for the 8cc compiler
